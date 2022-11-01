@@ -1,0 +1,40 @@
+{% extends 'Home/base.html' %}
+
+{% block title %}
+Savings Page
+{% endblock %}
+
+{% block content %}
+<div class="margin1">
+    <h1>Current Users</h1>
+    <form action="{% url 'new_user' %}">
+       <button class="btn btn-outline-info" type='submit'> Add New </button>
+    </form>
+    <br>
+
+    <table id="customers">
+        <tr>
+            <th> Name </th>
+            <th> City </th>
+            <th> State </th>
+            <th> Active </th>
+            <th>  </th>
+        </tr>
+            {% for column in user_data %}
+            <tr>
+                <td>{{column.first_name}} {{column.last_name}}</td>
+                <td>{{column.city}}</td>
+                <td>{{column.state}}</td>
+                <td>{{column.active}}</td>
+                {% if column.active == 'Y'%}
+                    <td><a href="{% url 'deactivate_user' column.user_id %}">Deactivate</a></td>
+                {% else %}
+                    <td><a href="{% url 'deactivate_user' column.user_id %}">Activate</a></a></td>
+                {% endif %}
+
+            </tr>
+            {% endfor %}
+     </table>
+</div>
+
+{% endblock %}

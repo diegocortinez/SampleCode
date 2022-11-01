@@ -1,0 +1,33 @@
+{% extends 'Home/base.html' %}
+
+{% block title %}
+New User
+{% endblock title %}
+
+{% block style %}
+
+    form, h1 {
+        width: 1000px;
+        float: left;
+        margin: 15px 60px;
+    }
+{% endblock style %}
+
+{% load crispy_forms_tags %}
+{% block content %}
+    <div class="margin1">
+        <form method="POST">
+            {% csrf_token %}
+            <div class="container-fluid">
+            <fieldset class="form-group">
+                <legend class="Text">Create New User</legend>
+                {{ form|crispy }}
+            </fieldset>
+            <div class="form-group">
+                <br>
+                    <button class="btn btn-outline-info" type="submit">Add New User</button>
+            </div>
+            </div>
+        </form>
+    </div>
+{% endblock content %}
