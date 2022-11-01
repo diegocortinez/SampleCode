@@ -1,0 +1,25 @@
+{% extends 'Home/base.html' %}
+
+{% block title %}
+Savings Page
+{% endblock %}
+
+{% block content %}
+    <div class="margin1">
+        <h1>Current Savings statement</h1>
+        <form action="{% url 'new_savings' %}">
+            <button class="btn btn-outline-info" type='submit'> Add New </button>
+        </form>
+        <br>
+        {% for i in user %}
+            <p>{{i.first_name}} {{i.last_name}}</p>
+            <ul>
+                {% for j in i.savings_set.all %}
+                    <li><p>Balance of ${{j.savings_balance}} on {{j.date_balance}}</p></li>
+                {% endfor %}
+            </ul>
+        <br>
+        {% endfor %}
+    </div>
+
+{% endblock %}
