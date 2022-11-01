@@ -1,0 +1,20 @@
+{% extends 'Home/base.html' %}
+
+{% block title %}
+Home Page
+{% endblock %}
+
+{% load static %}
+{% block content %}
+    <div class="margin1">
+        <h1>Online Banking App</h1>
+        <p>In this web application, you can add users, manage their funds, change their activity status, and access
+            their personal information through the API.</p>
+    </div>
+    <p class="aligncenter">
+        <img src="{% static '/images/money.jpeg' %}" width="1100">
+    </p>
+
+
+
+{% endblock %}
