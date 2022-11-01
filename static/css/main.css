@@ -1,0 +1,39 @@
+.nav-item:hover {
+    display:block;
+    background-color: #8998a3 !important;
+    }
+.navbar .navbar-nav .nav-link {
+    padding: 0.6em;
+    }
+
+.navbar .navbar-brand {
+    padding: 0 0.6em;
+    }
+
+.navbar-brand {
+    position: relative;
+    background: url("{% static 'images/bank_2.png' %}");
+    width: 170px;
+    left: 15px;
+    background-size: contain;
+    }
+
+@media only screen and (min-width: 992px) {
+    .navbar {
+        padding: 0;
+        }
+    .navbar .navbar-nav .nav-link {
+        padding: 1em 0.7em;
+        }
+    .navbar .navbar-brand {
+        padding: 0 0.8em;
+        }
+    }
+
+.aligncenter {
+    text-align: center;
+}
+
+.margin1 {margin: 15px 60px;
+    }
+
